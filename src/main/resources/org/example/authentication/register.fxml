@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.example.model.UserPrivileges?>
+<AnchorPane maxWidth="350.0" prefHeight="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AuthenticationController">
+   <VBox alignment="CENTER" spacing="15.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0"
+         AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <padding>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+      </padding>
+      <Label text="Registration" textFill="#000000cd">
+         <font>
+            <Font name="Forte" size="36.0"/>
+         </font>
+      </Label>
+      <HBox maxWidth="1.7976931348623157E308" spacing="10.0">
+         <TextField fx:id="firstNameTextField" promptText="First Name">
+            <font>
+               <Font size="14.0"/>
+            </font>
+         </TextField>
+         <TextField fx:id="lastNameTextField" promptText="Last Name">
+            <font>
+               <Font size="14.0"/>
+            </font>
+         </TextField>
+      </HBox>
+      <TextField fx:id="emailTextField" promptText="Email Address">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </TextField>
+      <HBox spacing="10.0">
+         <DatePicker fx:id="birthDateDatePicker" prefHeight="30.0" prefWidth="175.0" promptText="Date of Birth"/>
+         <ComboBox fx:id="privilegesComboBox" prefHeight="30.0" prefWidth="175.0" promptText="Requested Profile">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <UserPrivileges fx:value="STUDENT"/>
+                  <UserPrivileges fx:value="INSTRUCTOR"/>
+               </FXCollections>
+            </items>
+         </ComboBox>
+      </HBox>
+      <TextField fx:id="phoneNumberField" promptText="Phone Number">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordField" promptText="Password">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </PasswordField>
+      <PasswordField fx:id="retypedPasswordField" layoutX="20.0" layoutY="220.0" promptText="Retype Password">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </PasswordField>
+      <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#doRegister" text="Register">
+         <font>
+            <Font size="14.0"/>
+         </font>
+         <VBox.margin>
+            <Insets top="10.0"/>
+         </VBox.margin>
+      </Button>
+      <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+              onMouseClicked="#handleSwitchAuthenticationViews" text="Cancel">
+         <font>
+            <Font size="14.0"/>
+         </font>
+         <VBox.margin>
+            <Insets top="-10.0"/>
+         </VBox.margin>
+      </Button>
+   </VBox>
+</AnchorPane>
