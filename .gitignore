@@ -8,3 +8,5 @@
 /httpRequests/
 # Build Artifacts
 /target/*
+# Properties file
+/src/main/resources/org/example/config.properties
